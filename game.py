@@ -33,7 +33,14 @@ class Game:
                 self.ai.choose_gesture()
                 self.player.choose_gesture()
                 list_2 = ['Rock','Paper','Scissors','Iron Fist','Nuke']
-                if self.ai.choose_gesture() == list_2[0]:
+
+                if self.ai.chosen_gesture == list_2[0] and self.player.gesture_choice == list_2[0]:
+                    print('Tie! Go again!')
+                elif self.ai.chosen_gesture == list_2[0] and self.player.gesture_choice == list_2[1]:
+                    print('Paper covers rock')
+                    self.ai.score += 1
+                elif self.ai.chosen_gesture == list_2[0]
+
                     
             
                     if self.ai.score >= 2:
