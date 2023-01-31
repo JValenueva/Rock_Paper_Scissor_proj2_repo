@@ -27,4 +27,3 @@ class Player:
         else:
             print("Can't recognize, try typing it again")
             self.choose_gesture()
-        
