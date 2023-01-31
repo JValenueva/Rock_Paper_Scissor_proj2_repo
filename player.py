@@ -1,29 +1,34 @@
 class Player:
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.score = 0
+        self.gestures_list = ['Rock','Paper','Scissors','Lizard','Spock']
+        self.chosen_gesture = ''
+        pass
 
     def choose_gesture(self):
-        list_1 = ['Rock','Paper','Scissors','Iron Fist','Nuke']
-        print(list_1)
         
-        self.gesture_choice = input('Choose your weapon of choice: ')
-        print(self.gesture_choice)
+        the_choice = input('Choose your weapon of choice[0 - 4]: ')
+        print(the_choice)
         
-        if self.gesture_choice == list_1[0]:
-            print(f"You've chosen {list_1[0]}!")
+        if the_choice == "0":
+            # hold onto chosen gesture at 0
+            print(f"You've chosen {self.gestures_list[0]}!")
 
-        if self.gesture_choice == list_1[1]:
-            print(f"You've chosen {list_1[1]}!")
+        if the_choice == "1":
+            print(f"You've chosen {self.gestures_list[1]}!")
 
-        if self.gesture_choice == list_1[2]:
-            print(f"You've chosen {list_1[2]}!")
+        if the_choice == "2":
+            print(f"You've chosen {self.gestures_list[2]}!")
 
-        if self.gesture_choice == list_1[3]:
-            print(f"You've chosen {list_1[3]}!")
+        if the_choice == "3":
+            print(f"You've chosen {self.gestures_list[3]}!")
 
-        if self.gesture_choice == list_1[4]:
-            print(f"You've chosen {list_1[4]}!")
+        if the_choice == "4":
+            print(f"You've chosen {self.gestures_list[4]}!")
 
         else:
             print("Can't recognize, try typing it again")
             self.choose_gesture()
+
+        pass

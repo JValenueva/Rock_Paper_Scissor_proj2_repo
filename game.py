@@ -4,67 +4,73 @@ from human import Human
 
 class Game:
     def __init__(self) -> None:
-        self.ai = AI('Brother Bot 2.0')
-        self.human = Human()
+        self.player_one = Human("Bob's Burgers")
+        self.player_two = AI('Brother Bot 2.0')
+        
         self.player = Player()
+        pass
     
     def run_game(self):
-        while self.ai.score and self.player.score < 2:
+        while self.player_one.score and self.player_two.score < 3:
 
             starter = input("How's about a game of rock, paper, scissor, iron fist, nuke aye?(y/n): ")
             print(starter)
             if starter == 'y':
                 
-                print("Well alright then! Rules are simple.")
-                print(' ')
-                print('Scissors cuts paper')
-                print('Paper covers rock')
-                print('Rock crushes scissors')
-                print("Nuke vaporizes that whom holds the mantle of 'iron fist'")
-                print('Iron fist destroys scissors')
-                print('Scissors defuses nuke')
-                print('Nuke erases paper from this plane of existence')
-                print('Paper diables that whom habors the power of the iron fist with a flurry of paper cuts')
-                print('Iron fist demolishes rock into splinters of stone')
-                print(' ')
-                print('Best out of three rounds walks away with victory in hand!')
-                print('Now! Begin!')
+                 print("Well alright then! Rules are simple.")
+                 print(' ')
+                 print('Scissors cuts paper')
+                 print('Scissors decapitates lizard')
+                 print('Paper disproves spock')
+                 print('Paper covers rock')
+                 print('Rock crushes scissors')
+                 print('Rock crushes lizard')
+                 print('Spock vaporizes rock')
+                 print('Spock smashes scissors')
+                 print('Lizard eats paper')
+                 print('Lizard poisons spock')
+                 print(' ')
+                 print('Best out of three rounds walks away with victory in hand!')
+                 print('Now! Begin!')
                 
-                self.ai.choose_gesture()
-                self.player.choose_gesture()
-                list_2 = ['Rock','Paper','Scissors','Iron Fist','Nuke']
+                 self.player_one.choose_gesture()
+                 self.player_two.choose_gesture()
+                 if self.player_one.chosen_gesture == self.player.gestures_list[0] and self.player_two.chosen_gesture == self.player.gestures_list[0]:
+                    print('Tie go again!')
 
-                if self.ai.score >= 2:
-                    print(f'{self.ai.name} has defeated the player in a battle of wits and is declared the victor!')                        
-                    break
+                 elif self.player_one.chosen_gesture == self.player.gestures_list[0] and self.player_two.chosen_gesture == self.player.gestures_list[1]:
+                    print('Paper covers rock!')
+                    self.add_point_ply2
 
-                elif self.player.score >= 2:
-                    print(f'The player has outdone {self.ai.name} and taken the spectators by storm with a solid victory!')
-                    break
+                elif self.player_one.chosen_gesture == self.player.gestures_list[0] and self.player_two.chosen_gesture == self.player.gestures_list[2]:
+                    print('Rock cushes scissors!')
+                    self.add_point_ply1
+                
+                elif self.player_one.chosen_gesture == self.player.gestures_list[0] and self.player_two == self.player.gestures_list[3]:
+                    print('Rock crushes lizard!')
+                    self.add_point_ply1
+                
+                elif self.player_one.chosen_gesture == self.player.gestures_list[0] and self.player_two == self.player.gestures_list[4]:
+                    print('Spock vaporizes rock!')
+                    self.add_point_ply2
+
+                    if self.player_two.score > 3:
+                        print(f'{self.player_two.name} has defeated the player in a battle of wits and is declared the victor!')                        
+                        break
+
+                    elif self.player_one.score > 3:
+                        print(f'The player has outdone {self.player_one.name} and taken the spectators by storm with a solid victory!')
+                        break
 
             elif starter == 'n':
-                print("Well you're no fun, mate. Well I'll be off then.")
-                self.run_game()
+                 print("Well you're no fun, mate. Well I'll be off then.")
+                 self.run_game()
+        pass
 
-    def add_point(self):
-        self.ai.score += 1
-        self.player.score += 1
-
+    def add_point_ply1(self):
+        self.player_one.score += 1
+        
+    def add_point_ply2(self):
+        self.player_two.score += 1
+        
     
-
-uniR_1 = 'Rock' > 'Scissors' == True
-uniR_2 = 'Rock' < 'Paper' == True
-uniR_3 = 'Rock' < 'Nuke' == True
-uniR_4 = 'Rock' < 'Iron fist' == True
-uniR_5 = 'Paper' > 'Rock' == True
-uniR_6 = 'Paper' < 'Scissors' == True
-uniR_7 = 'Paper' < 'Nuke' == True
-uniR_8 = 'Paper' > 'Iron fist' == True
-uniR_9 = 'Scissors' > 'Paper' == True
-uniR_10 = 'Scissors' < 'Rock' == True
-uniR_11 = 'Scissors' > 'Nuke' == True
-uniR_12 = 'Scissors' < 'Iron fist' == True
-uniR_13 = 'Nuke' > 'Paper' == True
-uniR_14 = 'Nuke' > 'Iron fist' == True
-uniR_15 = 'Iron fist' > 'Scissors' == True
-uniR_16 = 'Iron fist' > 'Rock' == True
