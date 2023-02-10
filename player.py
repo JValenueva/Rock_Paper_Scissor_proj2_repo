@@ -4,7 +4,7 @@ class Player:
         self.score = 0
         self.gestures_list = ['Rock','Paper','Scissors','Lizard','Spock']
         self.chosen_gesture = ''
-        pass
+        
 
     def choose_gesture(self):
         
@@ -31,4 +31,4 @@ class Player:
             print("Can't recognize, try typing it again")
             self.choose_gesture()
 
-        pass
+        

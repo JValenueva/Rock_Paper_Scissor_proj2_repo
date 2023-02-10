@@ -8,7 +8,7 @@ class Game:
         self.player_two = AI('Brother Bot 2.0')
         
         self.player = Player('name')
-        pass
+        
     
     def run_game(self):
         while self.player_one.score and self.player_two.score < 3:
